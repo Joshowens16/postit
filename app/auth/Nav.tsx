@@ -12,7 +12,7 @@ export default async function Nav() {
         <h1 className="font-bold text-lg">Send it</h1>
       </Link>
       <ul className="flex items-center gap-6">
-        <Login />
+        {!session?.user ? <Login /> : <h1>{session.user.name}</h1>}
       </ul>
     </nav>
   );
